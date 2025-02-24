@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class AutoboxingExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50);
+        int sum = calculateSum(numbers);
+        System.out.println("Sum of numbers: " + sum);
+
+        String numStr = "123";
+        Integer parsedNumber = parseStringToInteger(numStr);
+        System.out.println("Parsed Integer: " + parsedNumber);
+    }
+
+    public static int calculateSum(List<Integer> numbers) {
+        int sum = 0;
+        for (Integer num : numbers) { // Autoboxing and unboxing happen here
+            sum += num;
+        }
+        return sum;
+    }
+
+    public static Integer parseStringToInteger(String str) {
+        return Integer.parseInt(str); // Using Integer wrapper class
+    }
+}
